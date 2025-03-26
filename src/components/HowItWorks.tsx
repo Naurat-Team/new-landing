@@ -7,17 +7,20 @@ const HowItWorks: React.FC = () => {
     {
       icon: <Feather className="w-10 h-10 mb-6" />,
       title: "Simplicidad en el Diseño",
-      description: "Interfaz intuitiva que elimina la curva de aprendizaje, permitiéndote comenzar de inmediato."
+      description: "Interfaz intuitiva que elimina la curva de aprendizaje, permitiéndote comenzar de inmediato.",
+      gradient: "from-blue-500 to-indigo-600"
     },
     {
       icon: <Layers className="w-10 h-10 mb-6" />,
       title: "Análisis Avanzado",
-      description: "Procesamiento de datos en tiempo real para obtener información valiosa que impulsa decisiones estratégicas."
+      description: "Procesamiento de datos en tiempo real para obtener información valiosa que impulsa decisiones estratégicas.",
+      gradient: "from-indigo-500 to-purple-600"
     },
     {
       icon: <Zap className="w-10 h-10 mb-6" />,
       title: "Resultados Inmediatos",
-      description: "Implementación ágil que genera impacto positivo desde el primer momento de adopción."
+      description: "Implementación ágil que genera impacto positivo desde el primer momento de adopción.",
+      gradient: "from-purple-500 to-indigo-600"
     }
   ];
 
@@ -26,7 +29,8 @@ const HowItWorks: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="mb-16 md:mb-20 text-center max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">Cómo Funciona</h2>
-          <p className="text-lg opacity-80">
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto"></div>
+          <p className="text-lg opacity-80 mt-6 text-gray-600">
             Un enfoque simplificado para transformar la manera en que gestionas tu negocio,
             sin complejidades innecesarias.
           </p>
@@ -36,21 +40,23 @@ const HowItWorks: React.FC = () => {
           {steps.map((step, index) => (
             <div 
               key={index} 
-              className="flex flex-col items-center text-center p-8 rounded-lg border border-black/10 hover:border-black/20 transition-all duration-300 bg-white"
+              className="flex flex-col items-center text-center p-8 rounded-lg border border-indigo-100 hover:border-indigo-300 transition-all duration-300 bg-white shadow-md hover:shadow-xl transform hover:-translate-y-1"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="rounded-full p-4 bg-black/5 mb-4">
+              <div className={`rounded-full p-4 bg-gradient-to-r ${step.gradient} text-white mb-4`}>
                 {step.icon}
               </div>
-              <h3 className="text-xl font-semibold mb-4">{step.title}</h3>
-              <p className="opacity-80">{step.description}</p>
+              <h3 className="text-xl font-semibold mb-4 text-gray-800">{step.title}</h3>
+              <p className="text-gray-600">{step.description}</p>
             </div>
           ))}
         </div>
       </div>
       
       {/* Decorative elements */}
-      <div className="absolute bottom-0 right-0 w-full h-px bg-black/5"></div>
+      <div className="absolute bottom-0 right-0 w-full h-px bg-gradient-to-r from-transparent via-indigo-200 to-transparent"></div>
+      <div className="absolute top-1/4 right-0 w-72 h-72 bg-indigo-600/[0.03] rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/2 left-0 w-72 h-72 bg-blue-600/[0.03] rounded-full blur-3xl"></div>
     </section>
   );
 };
