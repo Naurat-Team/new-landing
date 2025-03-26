@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react';
 
 const CallToAction: React.FC = () => {
   return (
-    <section id="cta" className="py-20 md:py-32 bg-gradient-to-br from-indigo-600 to-blue-700 relative overflow-hidden">
+    <section id="cta" className="py-20 md:py-32 bg-gradient-to-br from-[#312c86] to-[#211d5e] relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iLjA1Ij48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00eiIvPjwvZz48L2c+PC9zdmc+')] opacity-40"></div>
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
@@ -19,7 +19,7 @@ const CallToAction: React.FC = () => {
           <div className="animate-fade-in-delay">
             <a 
               href="#" 
-              className="group inline-flex items-center justify-center space-x-2 px-8 py-4 bg-white text-indigo-700 rounded-md transition-all duration-300 font-medium hover:shadow-xl btn-hover-effect"
+              className="group inline-flex items-center justify-center space-x-2 px-8 py-4 bg-white text-[#312c86] rounded-md transition-all duration-300 font-medium hover:shadow-xl btn-hover-effect"
             >
               <span>Comenzar Ahora</span>
               <ArrowRight size={18} className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />

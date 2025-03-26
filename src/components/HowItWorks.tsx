@@ -8,28 +8,28 @@ const HowItWorks: React.FC = () => {
       icon: <Feather className="w-10 h-10 mb-6" />,
       title: "Simplicidad en el Diseño",
       description: "Interfaz intuitiva que elimina la curva de aprendizaje, permitiéndote comenzar de inmediato.",
-      gradient: "from-blue-500 to-indigo-600"
+      gradient: "from-[#312c86] to-[#4b45b5]"
     },
     {
       icon: <Layers className="w-10 h-10 mb-6" />,
       title: "Análisis Avanzado",
       description: "Procesamiento de datos en tiempo real para obtener información valiosa que impulsa decisiones estratégicas.",
-      gradient: "from-indigo-500 to-purple-600"
+      gradient: "from-[#4b45b5] to-[#5751c5]"
     },
     {
       icon: <Zap className="w-10 h-10 mb-6" />,
       title: "Resultados Inmediatos",
       description: "Implementación ágil que genera impacto positivo desde el primer momento de adopción.",
-      gradient: "from-purple-500 to-indigo-600"
+      gradient: "from-[#5751c5] to-[#312c86]"
     }
   ];
 
   return (
-    <section id="how-it-works" className="py-20 md:py-32 bg-white relative overflow-hidden">
+    <section id="how-it-works" className="py-20 md:py-32 bg-white relative overflow-hidden z-10">
       <div className="container mx-auto px-6">
         <div className="mb-16 md:mb-20 text-center max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">Cómo Funciona</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-[#312c86] to-[#5751c5] mx-auto"></div>
           <p className="text-lg opacity-80 mt-6 text-gray-600">
             Un enfoque simplificado para transformar la manera en que gestionas tu negocio,
             sin complejidades innecesarias.
@@ -40,7 +40,7 @@ const HowItWorks: React.FC = () => {
           {steps.map((step, index) => (
             <div 
               key={index} 
-              className="flex flex-col items-center text-center p-8 rounded-lg border border-indigo-100 hover:border-indigo-300 transition-all duration-300 bg-white shadow-md hover:shadow-xl transform hover:-translate-y-1"
+              className="flex flex-col items-center text-center p-8 rounded-lg border border-[#312c86]/10 hover:border-[#312c86]/30 transition-all duration-300 bg-white shadow-md hover:shadow-xl transform hover:-translate-y-1"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className={`rounded-full p-4 bg-gradient-to-r ${step.gradient} text-white mb-4`}>
@@ -54,9 +54,9 @@ const HowItWorks: React.FC = () => {
       </div>
       
       {/* Decorative elements */}
-      <div className="absolute bottom-0 right-0 w-full h-px bg-gradient-to-r from-transparent via-indigo-200 to-transparent"></div>
-      <div className="absolute top-1/4 right-0 w-72 h-72 bg-indigo-600/[0.03] rounded-full blur-3xl"></div>
-      <div className="absolute bottom-1/2 left-0 w-72 h-72 bg-blue-600/[0.03] rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-full h-px bg-gradient-to-r from-transparent via-[#312c86]/20 to-transparent"></div>
+      <div className="absolute top-1/4 right-0 w-72 h-72 bg-[#312c86]/[0.03] rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/2 left-0 w-72 h-72 bg-[#5751c5]/[0.03] rounded-full blur-3xl"></div>
     </section>
   );
 };
