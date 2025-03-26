@@ -1,61 +1,102 @@
 
-import React from 'react';
-import { Play } from 'lucide-react';
+import React, { useState } from 'react';
+import { Play, CheckCircle2 } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
 
 const DemoVideo: React.FC = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handlePlayClick = () => {
+    setIsPlaying(true);
+    // En una implementación real, aquí controlarías la reproducción del video
+    setTimeout(() => {
+      console.log("Video playing");
+    }, 300);
+  };
+
+  const features = [
+    "Interfaz intuitiva y fácil de usar",
+    "Dashboards personalizables",
+    "Análisis predictivo avanzado",
+    "Integraciones con múltiples fuentes de datos"
+  ];
+
   return (
-    <section id="demo" className="py-20 md:py-32 bg-[#f8f8ff] relative overflow-hidden z-10">
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMwMDAiIGZpbGwtb3BhY2l0eT0iLjAyIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00eiIvPjwvZz48L2c+PC9zdmc+')] opacity-40"></div>
+    <section id="demo" className="py-20 md:py-32 bg-gradient-to-b from-[#f8f8ff] to-white relative overflow-hidden z-10">
       <div className="container mx-auto px-6 relative">
-        <div className="mb-16 text-center max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">Ve Naurat en Acción</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#312c86] to-[#5751c5] mx-auto"></div>
-          <p className="text-lg opacity-80 mt-6 text-gray-600">
-            Descubre cómo nuestra plataforma transforma la eficiencia operativa a través
-            de un enfoque innovador y práctico.
-          </p>
-        </div>
-        
-        <div className="max-w-5xl mx-auto relative rounded-2xl overflow-hidden shadow-2xl">
-          <div className="aspect-w-16 aspect-h-9 bg-black/90 relative group">
-            {/* Placeholder for video - in production you would embed a real video here */}
-            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#211d5e] to-[#312c86]">
-              <div className="text-white text-center max-w-md p-6">
-                <h3 className="text-2xl mb-3 font-semibold">Demo de Naurat</h3>
-                <p className="opacity-80 mb-8">Un video demostrativo de cómo Naurat puede transformar tus procesos de negocio.</p>
-                <button className="inline-flex items-center justify-center p-4 rounded-full bg-white text-[#312c86] group-hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-white/10">
-                  <Play size={32} className="fill-[#312c86]" />
-                </button>
+        <div className="flex flex-col lg:flex-row items-center gap-16">
+          <div className="w-full lg:w-1/2 order-2 lg:order-1">
+            <div className="max-w-xl">
+              <span className="inline-block px-4 py-1.5 bg-[#312c86]/10 text-[#312c86] rounded-full text-sm font-medium mb-4">DEMO EN VÍDEO</span>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">Naurat en acción</h2>
+              <p className="text-lg opacity-80 mb-8 text-gray-600">
+                Descubre cómo nuestra plataforma revoluciona la manera en que las empresas 
+                aprovechan sus datos para tomar decisiones más inteligentes y estratégicas.
+              </p>
+              
+              <div className="space-y-4 mb-8">
+                {features.map((feature, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <CheckCircle2 className="text-[#312c86] h-5 w-5 flex-shrink-0 mt-1" />
+                    <span className="text-gray-700">{feature}</span>
+                  </div>
+                ))}
               </div>
+              
+              <button 
+                onClick={handlePlayClick}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#312c86] text-white rounded-md hover:bg-[#312c86]/90 transition-colors"
+              >
+                <Play size={18} fill="white" />
+                <span>Ver demo completa</span>
+              </button>
             </div>
-            
-            {/* Video thumbnail overlay (can be replaced with actual thumbnail) */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-70"></div>
-            
-            {/* Play button overlay */}
-            <button className="absolute inset-0 flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity group">
-              <div className="h-20 w-20 flex items-center justify-center rounded-full bg-white/90 shadow-2xl transform group-hover:scale-110 transition-transform duration-300">
-                <Play size={36} className="text-[#312c86] fill-[#312c86] ml-1" />
-              </div>
-            </button>
           </div>
           
-          {/* Video controls bar - for styling only */}
-          <div className="p-4 bg-[#211d5e] text-white flex justify-between items-center">
-            <span className="font-medium">Naurat Platform Demo</span>
-            <div className="flex space-x-4">
-              <span className="text-sm opacity-80">03:24 / 10:15</span>
-            </div>
+          <div className="w-full lg:w-1/2 order-1 lg:order-2">
+            <Card className="overflow-hidden border-[#312c86]/10 shadow-xl hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-white to-[#f0f0ff]">
+              <CardContent className="p-0">
+                <div className="aspect-w-16 aspect-h-9 bg-[#312c86] relative group cursor-pointer" onClick={handlePlayClick}>
+                  {/* Video placeholder */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#211d5e] to-[#312c86] flex items-center justify-center">
+                    <div className="text-center max-w-xs p-6">
+                      <h3 className="text-white text-xl font-semibold mb-2">Naurat Platform</h3>
+                      <p className="text-white/70 text-sm">Transformando datos en decisiones inteligentes</p>
+                    </div>
+                  </div>
+                  
+                  {/* Play button overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="h-20 w-20 flex items-center justify-center rounded-full bg-white/90 shadow-lg transform group-hover:scale-110 transition-transform duration-300">
+                      <Play size={36} className="text-[#312c86] fill-[#312c86] ml-1" />
+                    </div>
+                  </div>
+                  
+                  {/* Overlay gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-70"></div>
+                </div>
+                
+                {/* Video controls bar (for styling only) */}
+                <div className="p-4 bg-[#211d5e] text-white flex justify-between items-center">
+                  <div className="flex items-center gap-2">
+                    <div className="h-3 w-3 rounded-full bg-red-500"></div>
+                    <span className="text-sm">DEMO EN VIVO</span>
+                  </div>
+                  <div className="text-sm opacity-80">03:24 / 10:15</div>
+                </div>
+                
+                {/* Video features list */}
+                <div className="p-6 border-t border-[#312c86]/10 bg-white">
+                  <h4 className="font-medium text-[#312c86] mb-2">Características destacadas:</h4>
+                  <ul className="text-sm text-gray-600 space-y-1">
+                    <li>• Dashboard intuitivo con análisis en tiempo real</li>
+                    <li>• Informes personalizables con exportación a múltiples formatos</li>
+                    <li>• Integración con sistemas existentes</li>
+                  </ul>
+                </div>
+              </CardContent>
+            </Card>
           </div>
-        </div>
-        
-        <div className="mt-12 text-center">
-          <a 
-            href="#cta" 
-            className="inline-flex items-center justify-center px-6 py-3 rounded-md bg-[#312c86] text-white hover:bg-[#211d5e] transition-colors duration-300"
-          >
-            Solicitar Demo Personalizada
-          </a>
         </div>
       </div>
       

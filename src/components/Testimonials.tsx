@@ -1,25 +1,29 @@
 
 import React, { useState } from 'react';
-import { ArrowLeft, ArrowRight, Quote } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
 
 const Testimonials: React.FC = () => {
   const testimonials = [
     {
-      quote: "Naurat transformó completamente la forma en que gestionamos nuestros proyectos. La interfaz intuitiva y las capacidades analíticas avanzadas han sido fundamentales para nuestro crecimiento.",
-      author: "Alejandra Martínez",
-      position: "Directora de Operaciones, TechVision"
+      quote: "Naurat ha transformado la forma en que analizamos nuestros datos de mercado. Los insights de IA nos han ayudado a identificar oportunidades que de otra manera habríamos perdido.",
+      author: "Sarah Chen",
+      position: "Chief Data Officer, TechVision Inc.",
+      image: "/lovable-uploads/14fe8230-c266-477a-a226-afb1365aa6ca.png"
     },
     {
-      quote: "Implementar Naurat fue una de las mejores decisiones estratégicas que tomamos. La plataforma simplificó nuestros procesos complejos y mejoró significativamente nuestra eficiencia operativa.",
-      author: "Carlos Mendoza",
-      position: "CEO, Innovate Solutions"
+      quote: "Las capacidades de análisis predictivo son impresionantes. Hemos podido anticipar las necesidades de los clientes y adaptar nuestra estrategia en consecuencia.",
+      author: "Michael Rodriguez",
+      position: "VP de Análisis, Global Retail",
+      image: "/lovable-uploads/14fe8230-c266-477a-a226-afb1365aa6ca.png"
     },
     {
-      quote: "Lo que más valoramos de Naurat es la combinación perfecta entre simplicidad y potencia. Nos ha permitido escalar operaciones sin añadir complejidad innecesaria a nuestros flujos de trabajo.",
-      author: "Elena Rodríguez",
-      position: "Directora de Tecnología, Global Services"
+      quote: "Lo que distingue a Naurat es cómo han hecho accesible la compleja ciencia de datos para todo nuestro equipo. La interfaz intuitiva ha sido un cambio radical.",
+      author: "Emma Williams",
+      position: "Directora de Operaciones, HealthNet",
+      image: "/lovable-uploads/14fe8230-c266-477a-a226-afb1365aa6ca.png"
     }
   ];
 
@@ -36,70 +40,83 @@ const Testimonials: React.FC = () => {
   return (
     <section id="testimonials" className="py-20 md:py-32 bg-gradient-to-b from-white to-[#f0f0ff] relative overflow-hidden z-10">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMwMDAiIGZpbGwtb3BhY2l0eT0iLjAyIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00eiIvPjwvZz48L2c+PC9zdmc+')] opacity-40"></div>
+      
       <div className="container mx-auto px-6 relative">
         <div className="mb-16 md:mb-20 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">Lo Que Dicen Nuestros Clientes</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#312c86] to-[#5751c5] mx-auto"></div>
+          <span className="inline-block px-4 py-1.5 bg-[#312c86]/10 text-[#312c86] rounded-full text-sm font-medium mb-4">CASOS DE ÉXITO</span>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">Nuestra plataforma de confianza</h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Vea cómo organizaciones de diversas industrias utilizan Naurat para transformar su enfoque de datos.
+          </p>
         </div>
         
-        <div className="max-w-4xl mx-auto relative">
-          <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2">
-            <Quote size={80} className="text-[#312c86] opacity-10" />
-          </div>
-          
-          <div className="relative z-10 h-[300px] flex items-center justify-center">
-            {testimonials.map((testimonial, index) => (
-              <div 
-                key={index}
-                className={cn(
-                  "transition-all duration-700 absolute inset-0",
-                  activeIndex === index ? "opacity-100 z-20 transform-none" : "opacity-0 z-10 translate-x-8"
-                )}
-              >
-                <blockquote className="text-center p-8 bg-white rounded-2xl shadow-lg border border-[#312c86]/10">
-                  <p className="text-xl md:text-2xl leading-relaxed mb-8 text-gray-800 italic">
-                    "{testimonial.quote}"
-                  </p>
-                  <footer>
-                    <p className="font-semibold text-lg text-[#312c86]">{testimonial.author}</p>
-                    <p className="text-sm text-[#5751c5]">{testimonial.position}</p>
-                  </footer>
-                </blockquote>
-              </div>
-            ))}
+        <div className="max-w-5xl mx-auto relative">
+          <div className="relative z-10 overflow-hidden">
+            <div className="flex transition-transform duration-500" style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
+              {testimonials.map((testimonial, index) => (
+                <div key={index} className="w-full flex-shrink-0 px-4">
+                  <Card className="border border-[#312c86]/10 shadow-lg overflow-hidden bg-white">
+                    <CardContent className="p-0">
+                      <div className="p-8 md:p-10 relative">
+                        <Quote className="absolute top-8 left-8 text-[#312c86]/10 w-16 h-16" />
+                        <div className="relative z-10">
+                          <p className="text-xl md:text-2xl leading-relaxed mb-8 text-gray-800">
+                            "{testimonial.quote}"
+                          </p>
+                          <div className="flex items-center">
+                            <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-200 mr-4">
+                              <img 
+                                src={testimonial.image} 
+                                alt={testimonial.author}
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                            <div>
+                              <p className="font-semibold text-[#312c86]">{testimonial.author}</p>
+                              <p className="text-sm text-gray-600">{testimonial.position}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              ))}
+            </div>
           </div>
           
           <div className="flex justify-center mt-12 space-x-4">
             <Button 
               onClick={handlePrev}
               variant="outline"
-              className="p-3 rounded-full hover:bg-[#312c86]/5 hover:text-[#312c86] hover:border-[#312c86]/30 transition-all duration-300"
-              aria-label="Previous testimonial"
+              className="w-12 h-12 p-0 rounded-full hover:bg-[#312c86] hover:text-white hover:border-[#312c86] transition-all duration-300"
+              aria-label="Testimonio anterior"
             >
-              <ArrowLeft size={18} />
+              <ChevronLeft size={20} />
             </Button>
+            
+            <div className="flex items-center space-x-2">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveIndex(index)}
+                  className={cn(
+                    "w-3 h-3 rounded-full transition-all duration-300",
+                    activeIndex === index ? "bg-[#312c86] w-8" : "bg-[#312c86]/30"
+                  )}
+                  aria-label={`Ir al testimonio ${index + 1}`}
+                />
+              ))}
+            </div>
+            
             <Button 
               onClick={handleNext}
               variant="outline"
-              className="p-3 rounded-full hover:bg-[#312c86]/5 hover:text-[#312c86] hover:border-[#312c86]/30 transition-all duration-300"
-              aria-label="Next testimonial"
+              className="w-12 h-12 p-0 rounded-full hover:bg-[#312c86] hover:text-white hover:border-[#312c86] transition-all duration-300"
+              aria-label="Siguiente testimonio"
             >
-              <ArrowRight size={18} />
+              <ChevronRight size={20} />
             </Button>
-          </div>
-          
-          <div className="flex justify-center mt-6 space-x-2">
-            {testimonials.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setActiveIndex(index)}
-                className={cn(
-                  "w-2 h-2 rounded-full transition-all duration-300",
-                  activeIndex === index ? "bg-[#312c86] w-6" : "bg-[#312c86]/30"
-                )}
-                aria-label={`Go to testimonial ${index + 1}`}
-              />
-            ))}
           </div>
         </div>
       </div>

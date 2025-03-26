@@ -1,26 +1,39 @@
 
 import React from 'react';
-import { Feather, Layers, Zap } from 'lucide-react';
+import { Brain, TrendingUp, Database, Briefcase, LineChart, Shield } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
 
 const HowItWorks: React.FC = () => {
-  const steps = [
+  const features = [
     {
-      icon: <Feather className="w-10 h-10 mb-6" />,
-      title: "Simplicidad en el Diseño",
-      description: "Interfaz intuitiva que elimina la curva de aprendizaje, permitiéndote comenzar de inmediato.",
-      gradient: "from-[#312c86] to-[#4b45b5]"
+      icon: <Brain className="w-10 h-10" />,
+      title: "IA Analítica Avanzada",
+      description: "Algoritmos de aprendizaje automático que descubren patrones y tendencias que los análisis tradicionales no detectan."
     },
     {
-      icon: <Layers className="w-10 h-10 mb-6" />,
-      title: "Análisis Avanzado",
-      description: "Procesamiento de datos en tiempo real para obtener información valiosa que impulsa decisiones estratégicas.",
-      gradient: "from-[#4b45b5] to-[#5751c5]"
+      icon: <TrendingUp className="w-10 h-10" />,
+      title: "Análisis Predictivo",
+      description: "Anticipe cambios del mercado y comportamientos de clientes con nuestras capacidades de modelado predictivo."
     },
     {
-      icon: <Zap className="w-10 h-10 mb-6" />,
-      title: "Resultados Inmediatos",
-      description: "Implementación ágil que genera impacto positivo desde el primer momento de adopción.",
-      gradient: "from-[#5751c5] to-[#312c86]"
+      icon: <Database className="w-10 h-10" />,
+      title: "Integración de Datos",
+      description: "Conecte múltiples fuentes de datos con nuestro robusto framework de integración para una visión completa."
+    },
+    {
+      icon: <Briefcase className="w-10 h-10" />,
+      title: "Inteligencia de Negocio",
+      description: "Transforme datos complejos en información clara y procesable para mejores decisiones estratégicas."
+    },
+    {
+      icon: <LineChart className="w-10 h-10" />,
+      title: "Monitoreo en Tiempo Real",
+      description: "Seguimiento de métricas clave con dashboards personalizables y alertas para respuestas inmediatas."
+    },
+    {
+      icon: <Shield className="w-10 h-10" />,
+      title: "Seguridad Empresarial",
+      description: "Descanse tranquilo con funciones de seguridad y cumplimiento de nivel empresarial protegiendo sus datos valiosos."
     }
   ];
 
@@ -31,24 +44,26 @@ const HowItWorks: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">Cómo Funciona</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-[#312c86] to-[#5751c5] mx-auto"></div>
           <p className="text-lg opacity-80 mt-6 text-gray-600">
-            Un enfoque simplificado para transformar la manera en que gestionas tu negocio,
-            sin complejidades innecesarias.
+            Descubra las potentes capacidades de Naurat diseñadas para transformar 
+            su enfoque de análisis de datos y toma de decisiones.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-          {steps.map((step, index) => (
-            <div 
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {features.map((feature, index) => (
+            <Card 
               key={index} 
-              className="flex flex-col items-center text-center p-8 rounded-lg border border-[#312c86]/10 hover:border-[#312c86]/30 transition-all duration-300 bg-white shadow-md hover:shadow-xl transform hover:-translate-y-1"
+              className="border border-[#312c86]/10 hover:border-[#312c86]/30 hover:shadow-lg transition-all duration-300 overflow-hidden group animate-fade-in"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className={`rounded-full p-4 bg-gradient-to-r ${step.gradient} text-white mb-4`}>
-                {step.icon}
-              </div>
-              <h3 className="text-xl font-semibold mb-4 text-gray-800">{step.title}</h3>
-              <p className="text-gray-600">{step.description}</p>
-            </div>
+              <CardContent className="p-8">
+                <div className="mb-6 bg-gradient-to-br from-[#312c86] to-[#5751c5] text-white p-4 rounded-lg w-16 h-16 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+                  {feature.icon}
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-[#312c86]">{feature.title}</h3>
+                <p className="text-gray-600">{feature.description}</p>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </div>
