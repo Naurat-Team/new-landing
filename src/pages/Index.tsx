@@ -21,15 +21,17 @@ const Index = () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('animate-fade-in');
-          observer.unobserve(entry.target);
+          // Don't remove opacity-0 here, just add the animation class
         }
       });
     }, observerOptions);
 
     const sections = document.querySelectorAll('section');
     sections.forEach((section) => {
-      section.classList.add('opacity-0');
-      observer.observe(section);
+      // Don't add opacity-0 to all sections directly
+      if (!section.classList.contains('animate-fade-in')) {
+        observer.observe(section);
+      }
     });
 
     return () => {
@@ -42,11 +44,13 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      <Hero />
-      <HowItWorks />
-      <Benefits />
-      <Testimonials />
-      <CallToAction />
+      <main>
+        <Hero />
+        <HowItWorks />
+        <Benefits />
+        <Testimonials />
+        <CallToAction />
+      </main>
       <Footer />
     </div>
   );
