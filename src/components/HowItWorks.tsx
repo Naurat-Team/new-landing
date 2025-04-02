@@ -8,7 +8,7 @@ const HowItWorks: React.FC = () => {
     {
       icon: <Brain className="w-10 h-10" />,
       title: "IA Analítica Avanzada",
-      description: "Algoritmos de aprendizaje automático que descubren patrones y tendencias que los análisis tradicionales no detectan."
+      description: "Nuestra IA comprende tus preguntas y genera análisis inteligentes en segundos que responderan todas tus dudas."
     },
     {
       icon: <TrendingUp className="w-10 h-10" />,
@@ -18,17 +18,17 @@ const HowItWorks: React.FC = () => {
     {
       icon: <Database className="w-10 h-10" />,
       title: "Integración de Datos",
-      description: "Conecte múltiples fuentes de datos con nuestro robusto framework de integración para una visión completa."
+      description: "Conecta múltiples fuentes de datos, sin importar su formato, de forma rápida y sin complicaciones."
     },
     {
       icon: <Briefcase className="w-10 h-10" />,
       title: "Inteligencia de Negocio",
-      description: "Transforme datos complejos en información clara y procesable para mejores decisiones estratégicas."
+      description: "Transforme interminables datos complejos en información clara y entendible para tomar decisiones estratégicas."
     },
     {
       icon: <LineChart className="w-10 h-10" />,
       title: "Monitoreo en Tiempo Real",
-      description: "Seguimiento de métricas clave con dashboards personalizables y alertas para respuestas inmediatas."
+      description: "Conozca el estado de su negocio en todo momento, totalmente actualizado sin depender de nadie mas."
     },
     {
       icon: <Shield className="w-10 h-10" />,
@@ -44,15 +44,15 @@ const HowItWorks: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">Cómo Funciona</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-[#312c86] to-[#5751c5] mx-auto"></div>
           <p className="text-lg opacity-80 mt-6 text-gray-600">
-            Descubra las potentes capacidades de Naurat diseñadas para transformar 
+            Descubra las potentes capacidades de Naurat diseñadas para transformar
             su enfoque de análisis de datos y toma de decisiones.
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {features.map((feature, index) => (
-            <Card 
-              key={index} 
+            <Card
+              key={index}
               className="border border-[#312c86]/10 hover:border-[#312c86]/30 hover:shadow-lg transition-all duration-300 overflow-hidden group animate-fade-in"
               style={{ animationDelay: `${index * 100}ms` }}
             >
@@ -67,7 +67,7 @@ const HowItWorks: React.FC = () => {
           ))}
         </div>
       </div>
-      
+
       {/* Decorative elements */}
       <div className="absolute bottom-0 right-0 w-full h-px bg-gradient-to-r from-transparent via-[#312c86]/20 to-transparent"></div>
       <div className="absolute top-1/4 right-0 w-72 h-72 bg-[#312c86]/[0.03] rounded-full blur-3xl"></div>

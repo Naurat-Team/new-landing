@@ -7,25 +7,25 @@ const Benefits: React.FC = () => {
     {
       icon: <BarChart className="w-7 h-7" />,
       title: "Incremento en Productividad",
-      description: "Optimiza procesos para lograr más resultados en menos tiempo, mejorando el rendimiento general.",
+      description: "Responde cualquier pregunta sobre tus datos en segundos, sin depender de terceros.",
       color: "from-[#312c86] to-[#4b45b5]"
     },
     {
       icon: <Shield className="w-7 h-7" />,
       title: "Seguridad Avanzada",
-      description: "Protección integral de datos con protocolos de encriptación de nivel empresarial.",
+      description: "Protección total de tu información con protocolos de seguridad de nivel empresarial.",
       color: "from-[#5751c5] to-[#4b45b5]"
     },
     {
       icon: <Clock className="w-7 h-7" />,
       title: "Ahorro de Tiempo",
-      description: "Automatización inteligente que reduce tareas manuales y elimina ineficiencias operativas.",
+      description: "Entiende tu negocio al instante, eliminando procesos manuales y esperas innecesarias.",
       color: "from-[#312c86] to-[#4b45b5]"
     },
     {
       icon: <LineChart className="w-7 h-7" />,
       title: "Escalabilidad Garantizada",
-      description: "Crece sin limitaciones técnicas, adaptándose perfectamente a la evolución de tu negocio.",
+      description: "Desde pequeñas empresas hasta corporaciones, nuestra solución se adapta a tu crecimiento.",
       color: "from-[#211d5e] to-[#312c86]"
     }
   ];
@@ -38,15 +38,14 @@ const Benefits: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">Beneficios Clave</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-[#5751c5] to-[#312c86] mx-auto"></div>
           <p className="text-lg opacity-80 mt-6">
-            Diseñado para potenciar cada aspecto de tu negocio mediante soluciones
-            precisas y eficientes.
+            Haz que tus datos trabajen para ti: rápido, seguro y sin esfuerzo.
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {benefitsList.map((benefit, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="flex p-6 bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-lg hover:border-white/20 transition-all duration-300 animate-fade-in transform hover:-translate-y-1 hover:shadow-lg"
               style={{ animationDelay: `${index * 100}ms` }}
             >
@@ -61,7 +60,7 @@ const Benefits: React.FC = () => {
           ))}
         </div>
       </div>
-      
+
       {/* Decorative element */}
       <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-white to-transparent opacity-5"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#5751c5]/10 rounded-full blur-3xl"></div>
