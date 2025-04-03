@@ -27,8 +27,7 @@ const CallToAction: React.FC = () => {
             </h2>
 
             <p className="text-lg mb-8 text-white/80 max-w-xl animate-fade-in">
-              Descubre cómo Naurat puede transformar tus procesos y potenciar tus resultados
-              con soluciones diseñadas para el éxito empresarial en la era digital.
+              Con Naurat, optimiza tus procesos y maximiza tus resultados con soluciones inteligentes, diseñadas para impulsar el éxito empresarial en la era digital.
             </p>
 
             <ul className="space-y-3 mb-10">
