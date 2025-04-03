@@ -48,6 +48,7 @@ const CallToAction: React.FC = () => {
                 </div>
                 <p className="text-white/100 mb-6">Descubre el poder de Naurat en acción. Solicita tu demo gratuita y transforma la forma en que comprendes tus datos.</p>
                 <a
+                  href='https://calendly.com/team-naurat-kdlj/30min'
                   className="w-full py-4 bg-white text-[#312c86] rounded-md font-semibold hover:bg-white/90 transition-colors flex items-center justify-center gap-2"
                 >
                   <span>Solicitar Demo</span>
