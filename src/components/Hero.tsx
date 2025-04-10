@@ -1,7 +1,10 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Hero: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="relative pt-32 pb-24 md:pt-44 md:pb-36 overflow-hidden bg-gradient-to-br from-white to-[#e8e7f7]">
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMwMDAiIGZpbGwtb3BhY2l0eT0iLjAyIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxLTEuNzktNC00LTRzLTQgMS43OS00IDQgMS43OSA0IDQgNCA0LTEuNzkgNC00eiIvPjwvZz48L2c+PC9zdmc+')] opacity-40"></div>
@@ -9,19 +12,17 @@ const Hero: React.FC = () => {
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-6 inline-flex items-center justify-center px-4 py-1.5 border border-[#312c86] rounded-full animate-fade-in bg-gradient-to-r from-[#f0f0ff] to-[#e8e7f7]">
             <span className="text-xs font-medium tracking-wide text-[#312c86]">
-              Analisis de Datos con IA
+              {t("data_analysis_with_ai")}
             </span>
           </div>
 
           <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight mb-6 animate-slide-down bg-clip-text text-transparent bg-gradient-to-r from-black to-[#312c86]">
-            Todo el poder de los datos en tus manos
+            {t("all_data_power_in_your_hands")}
             <br className="hidden md:block" />
           </h1>
 
           <p className="text-base md:text-lg opacity-80 max-w-2xl mx-auto mb-10 animate-fade-in-delay text-gray-700">
-            Conéctate a tus datos y siente su poder trabajar. Usa un simple
-            prompt, y en segundos tendrás un reporte detallado entendible para
-            cualquiera. Sin esperas, sin complicaciones, solo respuestas.
+            {t("connect_to_your_data_and_feel_its_power")}
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 animate-fade-in-delay">
@@ -30,7 +31,7 @@ const Hero: React.FC = () => {
               target="_blank"
               className="btn-hover-effect w-full sm:w-auto flex items-center justify-center space-x-2 px-8 py-3.5 bg-gradient-to-r from-[#312c86] to-[#211d5e] text-white rounded-md transition-all duration-300 font-medium shadow-md hover:shadow-xl hover:shadow-[#312c86]/20"
             >
-              <span>Comenzar Ahora</span>
+              <span>{t("get_started_now")}</span>
               <ArrowRight
                 size={16}
                 className="ml-2 transition-transform duration-300 group-hover:translate-x-1"
@@ -40,7 +41,7 @@ const Hero: React.FC = () => {
               href="#how-it-works"
               className="w-full sm:w-auto flex items-center justify-center px-8 py-3.5 border border-[#312c86]/30 rounded-md hover:bg-[#312c86]/5 transition-all duration-300 font-medium text-[#312c86]"
             >
-              Conocer más
+              {t("how_it_works")}
             </a>
           </div>
         </div>

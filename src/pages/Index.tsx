@@ -7,7 +7,7 @@ import DemoVideo from "@/components/DemoVideo";
 import CallToAction from "@/components/CallToAction";
 import Footer from "@/components/Footer";
 
-const Index = () => {
+export const Index = () => {
   // Add scroll reveal effect for sections
   useEffect(() => {
     const observerOptions = {
@@ -41,7 +41,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      <main className="relative">
+      <main className="relative  overflow-y-scroll">
         <Hero />
         <HowItWorks />
         <Benefits />
@@ -52,5 +52,3 @@ const Index = () => {
     </div>
   );
 };
-
-export default Index;

@@ -1,34 +1,33 @@
 import React from "react";
 import { BarChart, Shield, Clock, LineChart } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Benefits: React.FC = () => {
+  const { t } = useTranslation();
+
   const benefitsList = [
     {
       icon: <BarChart className="w-7 h-7" />,
-      title: "Incremento en Productividad",
-      description:
-        "Responde cualquier pregunta sobre tus datos en segundos, sin depender de terceros.",
+      title: t("increased_productivity"),
+      description: t("answer_data_questions_in_seconds"),
       color: "from-[#312c86] to-[#4b45b5]",
     },
     {
       icon: <Shield className="w-7 h-7" />,
-      title: "Seguridad Avanzada",
-      description:
-        "Protección total de tu información con protocolos de seguridad de nivel empresarial.",
+      title: t("advanced_security"),
+      description: t("total_information_protection"),
       color: "from-[#5751c5] to-[#4b45b5]",
     },
     {
       icon: <Clock className="w-7 h-7" />,
-      title: "Ahorro de Tiempo",
-      description:
-        "Entiende tu negocio al instante, eliminando procesos manuales y esperas innecesarias.",
+      title: t("time_saving"),
+      description: t("understand_your_business_instantly"),
       color: "from-[#312c86] to-[#4b45b5]",
     },
     {
       icon: <LineChart className="w-7 h-7" />,
-      title: "Escalabilidad Garantizada",
-      description:
-        "Desde pequeñas empresas hasta corporaciones, nuestra solución se adapta a tu crecimiento.",
+      title: t("guaranteed_scalability"),
+      description: t("solution_grows_with_your_business"),
       color: "from-[#211d5e] to-[#312c86]",
     },
   ];
@@ -42,11 +41,11 @@ const Benefits: React.FC = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="mb-16 md:mb-20 text-center max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">
-            Beneficios Clave
+            {t("key_benefits")}
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-[#5751c5] to-[#312c86] mx-auto"></div>
           <p className="text-lg opacity-80 mt-6">
-            Haz que tus datos trabajen para ti: rápido, seguro y sin esfuerzo.
+            {t("make_your_data_work_for_you")}
           </p>
         </div>
 
