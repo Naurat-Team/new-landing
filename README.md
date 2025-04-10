@@ -19,10 +19,10 @@ We recommend using [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) 
 
 ```sh
 # Step 1: Clone the repository using the Git URL.
-git clone <YOUR_GIT_URL>
+git clone https://github.com/Naurat-Team/new-landing
 
 # Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+cd new-landing
 
 # Step 3: Install the necessary dependencies.
 npm install
