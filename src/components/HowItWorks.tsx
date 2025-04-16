@@ -12,8 +12,8 @@ const HowItWorks: React.FC = () => {
     },
     {
       icon: <TrendingUp className="w-10 h-10" />,
-      title: "Análisis Predictivo",
-      description: "Anticipe cambios del mercado y comportamientos de clientes con nuestras capacidades de modelado predictivo."
+      title: "Exploración de Datos Avanzada",
+      description: "Analice su información en profundidad para descubrir patrones clave y generar reportes detallados que faciliten la toma de decisiones."
     },
     {
       icon: <Database className="w-10 h-10" />,
@@ -33,7 +33,7 @@ const HowItWorks: React.FC = () => {
     {
       icon: <Shield className="w-10 h-10" />,
       title: "Seguridad Empresarial",
-      description: "Descanse tranquilo con funciones de seguridad y cumplimiento de nivel empresarial protegiendo sus datos valiosos."
+      description: "Descanse tranquilo con funciones de seguridad y cumplimiento de nivel empresarial protegiendo sus valiosos datos."
     }
   ];
 
